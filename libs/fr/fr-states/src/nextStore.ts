@@ -46,7 +46,7 @@ export function useCreateStore(initialState: InitialState) {
         ...initialState,
       });
     }
-  }, [initialState]);
+  }, [initialState, isReusingStore]);
 
   return () => store;
 }

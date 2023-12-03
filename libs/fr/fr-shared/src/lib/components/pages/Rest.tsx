@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { TemplateLayout } from '../template/templateLayout';
-import { getCountries, useStore } from 'fr-state';
 import styled from 'styled-components';
+import { getCountriesByRestMethods, useStore } from 'fr/fr-states';
 
-export const TestRest = () => {
+export const Rest = () => {
   const countries = useStore((state) => state.countries);
 
   useEffect(() => {
-    getCountries(1, 10);
+    getCountriesByRestMethods(1, 10);
   }, []);
 
   return (

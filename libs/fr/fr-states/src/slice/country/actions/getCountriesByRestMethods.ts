@@ -3,7 +3,10 @@
 import { store } from '../../../nextStore';
 import { RestApiRequest } from '../../../restApiRequest';
 
-export const getCountries = async () => {
+export const getCountriesByRestMethods = async (
+  page: number,
+  limit: number
+) => {
   const str = store;
 
   str &&
@@ -16,7 +19,9 @@ export const getCountries = async () => {
     }));
 
   try {
-    const res = await RestApiRequest({ url: 'prisma/countries/' });
+    const res = await RestApiRequest({
+      url: `prisma/countries?limit=${limit}&page=${page}`,
+    });
 
     str &&
       str.setState((states) => ({
