@@ -1,2 +1,2 @@
-export * from './TestRest';
+export * from './Rest';
 export * from './TestGraph';

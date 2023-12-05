@@ -1,24 +1,25 @@
-import { useStore } from 'fr/fr-states';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Card } from '../organism/card';
+import { getCountriesByRestMethods, useStore } from 'fr/fr-states';
 import { Title } from '../molecules';
+import { Card } from '../organism/card';
 
-export const TestGraph = () => {
+export const Rest = () => {
   const countries = useStore((state) => state.countries);
 
-  // useEffect(() => {
-  //   getCountriesByGraphMethods();
-  // }, []);
+  useEffect(() => {
+    getCountriesByRestMethods(1, 10);
+  }, []);
 
   return (
     <MainContainer>
       <CardContainer>
         {countries.data.map((country, countryIndex) => (
-          <Card key={countryIndex}>
+          <Card key={countryIndex} className="country">
             <Title items={country} />
             {country.provinces &&
               country.provinces.map((province, proIndex) => (
-                <Card key={`---Pro${proIndex}`}>
+                <Card key={`---Pro${proIndex}`} className="province">
                   <Title items={province} />
                   {province.cities &&
                     province.cities.map((city, cityIndex) => (
@@ -45,9 +46,14 @@ const MainContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-  width: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
+  & {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+  .province {
+    flex-grow: 0;
+  }
 `;
