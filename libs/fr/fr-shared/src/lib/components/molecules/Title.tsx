@@ -29,12 +29,13 @@ export const Title: FC<IProps> = ({ items }) => {
 const TitleWrapper = styled.p`
   font-size: 1.3rem;
   color: white;
-  flex-grow: 1;
   width: 100%;
   display: flex;
   justify-content: space-between;
   span {
     padding: 0.5rem;
+    display: inline-block;
+    height: fit-content;
     i {
       font-style: normal;
       padding: 0.5rem;

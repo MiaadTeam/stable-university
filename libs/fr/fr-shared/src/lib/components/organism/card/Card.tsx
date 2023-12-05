@@ -3,10 +3,11 @@ import { FC, ReactElement, ReactNode } from 'react';
 
 interface IProps {
   children?: ReactElement | ReactNode;
+  className?: string;
 }
 
-export const Card: FC<IProps> = ({ children }) => {
-  return <CardWrapper>{children}</CardWrapper>;
+export const Card: FC<IProps> = ({ children, className }) => {
+  return <CardWrapper className={className}>{children}</CardWrapper>;
 };
 
 const CardWrapper = styled.div`
@@ -22,7 +23,7 @@ const CardWrapper = styled.div`
   border-radius: 10px;
   backdrop-filter: blur(7px);
   background-color: rgba(65, 65, 65, 0.308);
-  border: 1px solid rgba(255, 255, 255, 0.089);
-  cursor: pointer;
+  /* cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.089); */
   border: 1px solid darkgoldenrod;
 `;

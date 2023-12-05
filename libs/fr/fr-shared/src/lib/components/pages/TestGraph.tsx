@@ -51,37 +51,3 @@ const CardContainer = styled.div`
   justify-content: flex-start;
   align-content: flex-start;
 `;
-
-// const Card = styled.div`
-//   position: relative;
-//   display: flex;
-//   flex-grow: 1;
-//   flex-direction: column;
-//   align-items: strech;
-//   justify-content: flex-start;
-//   align-content: flex-start;
-//   padding: 20px 10px;
-//   margin: 0.5rem;
-//   border-radius: 10px;
-//   backdrop-filter: blur(7px);
-//   background-color: rgba(65, 65, 65, 0.308);
-//   border: 1px solid rgba(255, 255, 255, 0.089);
-//   cursor: pointer;
-//   border: 1px solid darkgoldenrod;
-// `;
-
-// const Title = styled.p`
-//   font-size: 1.3rem;
-//   color: white;
-//   flex-grow: 1;
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   span {
-//     padding: 0.5rem;
-//     i {
-//       font-style: normal;
-//       padding: 0.5rem;
-//     }
-//   }
-// `;
